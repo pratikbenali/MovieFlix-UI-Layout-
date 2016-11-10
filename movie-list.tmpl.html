@@ -1,0 +1,29 @@
+<input type="text" class="form-control" placeholder=" Search Movies by Title Here " ng-model="movieListVm.searchText.Title">
+<table class="table table-hover">
+    <thead>
+    <tr class="top">
+        <th> Movie Picture </th>
+        <th ng-click="movieListVm.sorter.sortBy='Title';movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;"> Title </th>
+        <th ng-click="movieListVm.sorter.sortBy='Year';movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;"> Year </th>
+        <th ng-click="movieListVm.sorter.sortBy='Genre';movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;"> Genre </th>
+        <th> Plot </th>
+        <th ng-click="movieListVm.sorter.sortBy='Language';movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;"> Language </th>
+        <th ng-click="movieListVm.sorter.sortBy='imdbRating';movieListVm.sorter.sortOrder = !movieListVm.sorter.sortOrder;"> IMDB Rating </th>
+        <th> Remove </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat = "movie in movieListVm.movies | filter:movieListVm.searchText | orderBy:movieListVm.sorter.sortBy: movieListVm.sorter.sortOrder">
+        <td>
+          <a ng-href="#/movie-detail/{{movie.Title}}"> <img class="movie-pic" ng-src="{{movie.Poster}}"></a>
+        </td>
+        <td><b>{{movie.Title}} </b></td>
+        <td>{{movie.Year}}</td>
+        <td>{{movie.Genre}}</td>
+        <td>{{movie.Plot}}</td>
+        <td>{{movie.Language}}</td>
+        <td>{{movie.imdbRating}}</td>
+        <!--<td><i ng-click="movieListVm.deleteMovie(movie.Title)" class="glyphicon glyphicon-remove"></i> </td>-->
+    </tr>
+    </tbody>
+</table>

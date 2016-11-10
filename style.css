@@ -1,0 +1,18 @@
+.movie-pic{
+    width: 60px;
+    height: 60px;
+}
+
+.top{
+    color:blue;
+}
+
+.error{
+    color: red;
+    margin: 0px;
+}
+
+section{
+    margin: 40px 0;
+    min-height: 400px;
+}

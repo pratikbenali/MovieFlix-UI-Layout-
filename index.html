@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="movie" xmlns="http://www.w3.org/1999/html">
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+ <!--To be put later on -->
+<!--<p>{{"1234567809" | phone}}</p>-->
+
+ <!--To be put later on-->
+<header class="container">
+   <h1> MovieFLix </h1>
+   <nav>
+      <ul class="nav nav-pills">
+         <li class="active"><a href="#/movie-list">Movie List</a> </li>
+         <li class="active"><a href="#/add-movie">Add Movie</a> </li>
+      </ul>
+   </nav>
+</header>
+ <section class="container" ng-view></section>
+ <footer class="container">
+    &copy;2016 | Pratik
+ </footer>
+
+<script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.5.8/angular-messages.min.js"></script>
+<script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+<script src="https://cdn.jsdelivr.net/lodash/4.14.1/lodash.min.js"></script>
+<script src="movie.module.js"></script>
+<script src="movie-list.controller.js"></script>
+<script src="movie-detail.controller.js"></script>
+<script src="add-movie.controller.js"></script>
+<script src="movie.service.js"></script>
+<script src="phone.filter.js"></script>
+</body>
+</html>

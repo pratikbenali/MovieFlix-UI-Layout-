@@ -1,0 +1,46 @@
+<form name="movieForm" ng-submit="movieForm.$setPristine(); addMovieVm.addMovie()" novalidate>
+    <div class="form-group">
+        <label for="moviePicture">Movie Picture URL</label>
+        <input type="text" class="form-control" id="moviePicture" placeholder="Movie Picture URL" ng-model="addMovieVm.newMovie.Poster" required>
+    </div>
+    <div class="form-group">
+        <label for="title">Movie Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Movie Title" ng-model="addMovieVm.newMovie.Title" required minlength="2">
+        <div ng-messages="movieForm.title.$error" ng-if="movieForm.title.$dirty">
+            <p ng-message="required" class="error">Movie Title is required</p>
+            <p ng-message="minlength" class="error">Movie Title should be at least 2 characters</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="year">Year</label>
+        <input type="number" class="form-control" id="year" name="year" placeholder="Year" ng-model="addMovieVm.newMovie.Year" required minlength="4" maxlength="4">
+        <div ng-messages="movieForm.year.$error" ng-if="movieForm.year.$dirty">
+            <p ng-message="required" class="error">Movie Year Released is necessary</p>
+            <p ng-message="minlength" class="error">Movie Year is invalid</p>
+            <p ng-message="maxlength" class="error">Movie Year is invalid</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" class="form-control" id="genre" name="genre" placeholder="Genre" ng-model="addMovieVm.newMovie.Genre" required>
+        <div ng-messages="movieForm.genre.$dirty" ng-if="movieForm.genre.$dirty">
+            <p ng-message="required" class="error">Movie Genre is necessary</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="plot">Movie Plot</label>
+        <input type="text" class="form-control" id="plot" name="plot" placeholder="Movie Plot" ng-model="addMovieVm.newMovie.Plot" required>
+        <div ng-messages="movieForm.plot.$dirty" ng-if="movieForm.plot.$dirty">
+            <p ng-message="required" class="error">Movie Plot is necessary</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="language">Movie Languages</label>
+        <input type="text" class="form-control" id="language" name="language" placeholder="Movie Lanuages" ng-model="addMovieVm.newMovie.Language" required>
+        <div ng-messages="movieForm.language.$dirty" ng-if="movieForm.language.$dirty">
+            <p ng-message="required" class="error">Movie Language is necessary</p>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" ng-disabled="movieForm.$invalid">Submit</button>
+</form>
